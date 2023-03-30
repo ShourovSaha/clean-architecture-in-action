@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CleanArch.Domain.Interfaces
 {
-    internal interface ICourseRespository
+    public interface ICourseRepository
     {
         IEnumerable<Course> GetCourses();
     }

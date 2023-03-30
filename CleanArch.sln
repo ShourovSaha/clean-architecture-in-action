@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArch.Domain", "CleanAr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArch.Data", "CleanArch.Data\CleanArch.Data.csproj", "{E2CA3632-C905-42F4-83C5-5100020F87AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArch.Application", "CleanArch.Application\CleanArch.Application.csproj", "{3408D9CF-52EF-4F45-B2D3-EC3B7089B999}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArch.Application", "CleanArch.Application\CleanArch.Application.csproj", "{3408D9CF-52EF-4F45-B2D3-EC3B7089B999}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArch.Infra.IoC", "CleanArch.Infra.IoC\CleanArch.Infra.IoC.csproj", "{6656B6DE-6EE6-4012-A514-433BBD88811C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +45,10 @@ Global
 		{3408D9CF-52EF-4F45-B2D3-EC3B7089B999}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3408D9CF-52EF-4F45-B2D3-EC3B7089B999}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3408D9CF-52EF-4F45-B2D3-EC3B7089B999}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6656B6DE-6EE6-4012-A514-433BBD88811C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6656B6DE-6EE6-4012-A514-433BBD88811C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6656B6DE-6EE6-4012-A514-433BBD88811C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6656B6DE-6EE6-4012-A514-433BBD88811C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -52,6 +58,7 @@ Global
 		{AD327F07-82F5-40E9-8978-6B78C7764702} = {0EB518D5-296A-400F-963D-10C19A61CE0E}
 		{E2CA3632-C905-42F4-83C5-5100020F87AC} = {DD8B4576-AF3C-44D4-B226-3FB2DBD17272}
 		{3408D9CF-52EF-4F45-B2D3-EC3B7089B999} = {1F6E1E08-3626-4528-B55C-8BC210F2BBA7}
+		{6656B6DE-6EE6-4012-A514-433BBD88811C} = {0276A69D-C962-4328-97F2-96C851EF189C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {30DB09E3-776B-4507-9DBB-7DB0ACFB37F1}

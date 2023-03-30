@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CleanArch.Application.Services
+namespace CleanArch.Application.Interfaces
 {
-    internal interface ICourseService
+    public interface ICourseService
     {
-        IEnumerable<CourseViewModel> GetCourses();
+        CourseViewModel GetCourses();
     }
 }

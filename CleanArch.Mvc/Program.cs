@@ -1,7 +1,10 @@
 using CleanArch.Data.Context;
+using CleanArch.Infra.IoC;
 using CleanArch.Mvc.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Internal;
+using Microsoft.Extensions.Configuration;
 
 namespace CleanArch.Mvc
 {
@@ -12,17 +15,19 @@ namespace CleanArch.Mvc
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-            var connectionString = builder.Configuration.GetConnectionString("VarsityIdentityDBConnStr") ?? throw new InvalidOperationException("Connection string 'VarsityIdentityDBConnStr' not found.");
+            registerServices(builder.Services, builder.Configuration);
+
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(connectionString));
-            builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+                options.UseSqlServer(builder.Configuration.GetConnectionString("VarsityIdentityDBConnStr")
+                    ?? throw new InvalidOperationException("Connection string 'VarsityIdentityDBConnStr' not found."))
+            );
 
             builder.Services.AddDbContext<VarsityDbContext>(options =>
-            {
-                options.UseSqlServer(builder.Configuration.GetConnectionString("VarsityDBConnStr") 
-                    ?? throw new InvalidOperationException("Connection string 'VarsityDBConnStr' not found."));
-            });
+                options.UseSqlServer(builder.Configuration.GetConnectionString("VarsityDBConnStr")
+                    ?? throw new InvalidOperationException("Connection string 'VarsityDBConnStr' not found."))
+            );
 
+            builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
             builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
@@ -56,6 +61,11 @@ namespace CleanArch.Mvc
             app.MapRazorPages();
 
             app.Run();
+        }
+
+        private static void registerServices(IServiceCollection services, IConfiguration configuration)
+        {
+            DependencyContainer.RegisterDepandancy(services, configuration);
         }
     }
 }

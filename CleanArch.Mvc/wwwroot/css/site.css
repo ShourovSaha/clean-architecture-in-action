@@ -1,5 +1,23 @@
+.course-content{
+    padding: 20px;
+}
+
+
+.course-image-container{
+
+
+}
+
+.course-image {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 200px;
+    width: 200px;
+}
+
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
